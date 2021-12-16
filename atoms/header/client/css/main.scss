@@ -1,0 +1,92 @@
+// @import "enhanced_fonts"; // for when you need special font features 
+@import "fonts";
+@import "mq";
+@import "palette";
+@import "dcr_enhancer"; //remove this line when using immersive weighting or the article template
+
+/*----- DCR live Corrections -----*/
+.element-immersive { //this fixes the incorrect dcr immersive margins and width
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+
+  @include mq(tablet) {
+      transform: translateX(10px);
+  }
+
+  @include mq(leftCol) {
+      transform: translateX(0);
+  }
+}
+/* ------------------------- */
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+.ios, .android {
+    .element--immersive {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
+    }
+    
+    //remove dark mode padding in apps
+    figure.element.element-atom, figure.interactive.interactive-atom.interactive--loading {
+        padding: 0 !important;
+    }
+}
+
+.content__headline, .headline {
+
+    @include fs-titlepiece(1);
+    margin-top: 290px;
+    @include mq(mobileLandscape) {
+        margin-top: 360px;
+    }
+    @include mq(desktop) {
+        @include fs-titlepiece(2);
+        margin-top: 360px;
+    }
+}
+
+.article__header {
+    background: transparent !important;
+
+    &::before {
+        margin-left: 0 !important;
+    }
+}
+
+.content--interactive::before, .article__header::before {
+    //z-index: -1;
+    content: "";
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    clear: both;
+
+    background-image: url('<%= path %>/assets/mobile-header.png');
+    width: 100%;
+    margin-left: -20px;
+    height: 290px;
+    background-position: center bottom;
+
+    @include mq(mobileLandscape) {
+        background-size: auto 100%;
+        height: 350px;
+    }
+
+    @include mq(desktop) {
+        background-image: url('<%= path %>/assets/Covid 2021-assets/Header_v1.png');
+        background-position: center bottom;
+        height : 350px;
+    }
+}
