@@ -85,7 +85,7 @@
     }
 
     @include mq(desktop) {
-        background-image: url('<%= path %>/assets/Covid 2021-assets/Header_v1.png');
+        background-image: url('<%= path %>/assets/Header_v1.png');
         background-position: center bottom;
         height : 350px;
     }
