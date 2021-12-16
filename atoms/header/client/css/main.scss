@@ -1,11 +1,11 @@
 // @import "enhanced_fonts"; // for when you need special font features 
 @import "fonts";
 @import "mq";
-@import "palette";
-@import "dcr_enhancer"; //remove this line when using immersive weighting or the article template
+//@import "palette";
+//@import "dcr_enhancer"; //remove this line when using immersive weighting or the article template
 
 /*----- DCR live Corrections -----*/
-.element-immersive { //this fixes the incorrect dcr immersive margins and width
+/* .element-immersive { //this fixes the incorrect dcr immersive margins and width
   width: 100vw !important;
   position: relative !important;
   left: 50% !important;
@@ -20,8 +20,8 @@
   @include mq(leftCol) {
       transform: translateX(0);
   }
-}
-/* ------------------------- */
+} 
+
 
 .interactive-atom {
     margin: 0;
@@ -42,7 +42,8 @@
     figure.element.element-atom, figure.interactive.interactive-atom.interactive--loading {
         padding: 0 !important;
     }
-}
+}  */
+
 
 .content__headline, .headline {
 
@@ -85,7 +86,7 @@
     }
 
     @include mq(desktop) {
-        background-image: url('<%= path %>/assets/Header_v1.png');
+        background-image: url('<%= path %>/Header_v1.png');
         background-position: center bottom;
         height : 350px;
     }
