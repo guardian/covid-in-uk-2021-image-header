@@ -1,4 +1,4 @@
-// @import "enhanced_fonts"; // for when you need special font features 
+@import "enhanced_fonts"; // for when you need special font features 
 @import "fonts";
 @import "mq";
 //@import "palette";
@@ -88,6 +88,8 @@
     @include mq(desktop) {
         background-image: url('<%= path %>/Header_v1.png');
         background-position: center bottom;
-        height : 350px;
+        //height : 350px;
+        //background-repeat: no-repeat;
+        //background-size: 100%;
     }
 }
